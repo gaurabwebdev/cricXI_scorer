@@ -3,3 +3,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.content_box {
+  max-width: 1200px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+#header-container {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #4b404084;
+}
+
+.logo-container a img {
+  width: 100px;
+}
