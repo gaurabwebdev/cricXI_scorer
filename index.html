@@ -26,12 +26,12 @@
     <!-- Main Content Starts -->
 
     <main>
-      <div class="content_box main-content-wrapper">
+      <div class="content_box content-wrapper teams-parent-container">
         <div class="player-registration-container">
           <h2 class="team-name">Team One</h2>
           <div class="player-input-container">
             <input class="player-name-input" type="text" />
-            <button class="player-add-btn">Add</button>
+            <button class="player-add-btn general-btn">Add</button>
           </div>
           <div class="player-list">
             <ol></ol>
@@ -41,11 +41,50 @@
           <h2 class="team-name">Team Two</h2>
           <div class="player-input-container">
             <input class="player-name-input" type="text" />
-            <button class="player-add-btn">Add</button>
+            <button class="player-add-btn general-btn">Add</button>
           </div>
           <div class="player-list">
             <ol></ol>
           </div>
+        </div>
+      </div>
+
+      <div class="content_box content-wrapper">
+        <div class="match-details">
+          <div class="match-over-selection-container">
+            <ul class="match-over-list">
+              <li>
+                <input
+                  onclick="matchOverSelection(this)"
+                  class="overs-format"
+                  type="checkbox"
+                  id="five-overs"
+                  name="current-match-over"
+                /><span>5 Overs</span>
+              </li>
+              <li>
+                <input
+                  onclick="matchOverSelection(this)"
+                  class="overs-format"
+                  type="checkbox"
+                  id="ten-overs"
+                  name="current-match-over"
+                /><span>10 Overs</span>
+              </li>
+              <li>
+                <input
+                  onclick="matchOverSelection(this)"
+                  class="overs-format"
+                  type="checkbox"
+                  id="twenty-overs"
+                  name="current-match-over"
+                /><span>20 Overs</span>
+              </li>
+            </ul>
+          </div>
+          <button class="general-btn match-start-btn" disabled>
+            Start Match
+          </button>
         </div>
       </div>
     </main>
