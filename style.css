@@ -53,7 +53,7 @@ body {
   padding: 10px 20px;
 }
 
-.player-registraton-container {
+.player-registration-container {
   width: 100%;
   margin-top: 20px;
   padding: 15px;
@@ -62,19 +62,19 @@ body {
   margin: auto;
 }
 
-.player-registraton-container h2 {
+.player-registration-container h2 {
   color: #fff;
   margin-bottom: 12px;
 }
 
-.player-registraton-container div {
+.player-registration-container div {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
 
-.player-registraton-container div input {
+.player-registration-container div input {
   padding: 10px;
   width: 100%;
   border-radius: 4px;
@@ -82,7 +82,7 @@ body {
   outline: none;
 }
 
-.player-registraton-container button {
+.player-registration-container button {
   width: 75px;
   padding: 6px;
   border-radius: 4px;
