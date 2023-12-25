@@ -23,21 +23,37 @@ const playerAdd = () => {
           "Team One"
         ) {
           const newPlayer = document.createElement("li");
-          newPlayer.textContent = plyerNameInput.value;
-          playerList.appendChild(newPlayer);
+          // newPlayer.textContent = plyerNameInput.value;
+          // playerList.appendChild(newPlayer);
           teamOne.push(plyerNameInput.value);
           console.log(teamOne);
-          plyerNameInput.value = "";
+          if (teamOne.length <= 11) {
+            for (let x = 0; x < teamOne.length; x++) {
+              newPlayer.textContent = teamOne[x];
+              playerList.appendChild(newPlayer);
+            }
+            plyerNameInput.value = "";
+          } else {
+            alert("Player Limit Exceeded");
+          }
         } else if (
           clickedBtn.parentElement.parentElement.querySelector(".team-name")
             .textContent === "Team Two"
         ) {
           const newPlayer = document.createElement("li");
-          newPlayer.textContent = plyerNameInput.value;
-          playerList.appendChild(newPlayer);
+          // newPlayer.textContent = plyerNameInput.value;
+          // playerList.appendChild(newPlayer);
           teamOne.push(plyerNameInput.value);
           console.log(teamTwo);
-          plyerNameInput.value = "";
+          if (teamTwo > length <= 11) {
+            for (let x = 0; x < teamTwo.length; x++) {
+              newPlayer.textContent = teamTwo[x];
+              playerList.appendChild(newPlayer);
+            }
+            plyerNameInput.value = "";
+          } else {
+            alert("Player Limit Exceeded");
+          }
         }
       } else {
         alert("Please Enter Your Player Name");
