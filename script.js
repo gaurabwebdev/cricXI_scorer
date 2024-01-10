@@ -16,7 +16,7 @@ playerAddButtons.forEach((btn) => {
       clickedBtn.parentElement.querySelector(".player-name-input");
     const playerName = playerNameField.value;
     if (playerName) {
-      newPlayerElement.innerHTML = `${playerName} <div class="player-modifier"><i class="fa-regular fa-pen-to-square"></i><i class="fa-solid fa-xmark"></i></div>`;
+      newPlayerElement.innerHTML = `${playerName} <div class="player-modifier"><i onclick="modifyPlayer(this)" class="fa-regular fa-pen-to-square"></i><i onclick="modifyPlayer(this)" class="fa-solid fa-xmark"></i></div>`;
       playerList.appendChild(newPlayerElement);
       playerNameField.value = "";
     } else {
@@ -25,6 +25,26 @@ playerAddButtons.forEach((btn) => {
   });
 });
 
-// M A T C H        O V E R S       S E L E C T I O N
+// D E L E T E      P L A Y E R
+const modifyPlayer = (modifyBtn) => {
+  const currentPlayerContainer = modifyBtn.parentElement.parentElement;
+  const currentPlayerName = currentPlayerContainer.textContent;
+  if (modifyBtn.classList.contains("fa-pen-to-square")) {
+    const modifierInput = document.createElement("input");
+    modifierInput.value = currentPlayerName;
+    currentPlayerContainer.innerHTML = `<input class="modifiedName" type="text" value="${currentPlayerName}"> <div class="player-modifier"><i onclick="modifyPlayer(this)"
+     class="fa-solid fa-check"></i></div>`;
+    return;
+  } else if (modifyBtn.classList.contains("fa-check")) {
+    const playerNewName = document.querySelector(".modifiedName");
+    if (playerNewName.value) {
+      currentPlayerContainer.innerHTML = `${playerNewName.value} <div class="player-modifier"><i onclick="modifyPlayer(this)" class="fa-regular fa-pen-to-square"></i><i onclick="modifyPlayer(this)" class="fa-solid fa-xmark"></i></div>`;
+      return;
+    }
+  } else if (modifyBtn.classList.contains("fa-xmark")) {
+    currentPlayerContainer.remove();
+    return;
+  }
+};
 
 //  M A T C H       D E T A I L S       C O N T A I N E R
