@@ -47,4 +47,12 @@ const modifyPlayer = (modifyBtn) => {
   }
 };
 
-//  M A T C H       D E T A I L S       C O N T A I N E R
+//  M A T C H       S E L E C T I O N       F U N C T I O N
+let matchOver = 5;
+const matchOvers = document.querySelectorAll(".match-overs");
+
+matchOvers.forEach((o) => {
+  o.addEventListener("change", (e) => {
+    console.log(e.target);
+  });
+});
