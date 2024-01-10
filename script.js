@@ -16,8 +16,9 @@ playerAddButtons.forEach((btn) => {
       clickedBtn.parentElement.querySelector(".player-name-input");
     const playerName = playerNameField.value;
     if (playerName) {
-      newPlayerElement.textContent = playerName;
+      newPlayerElement.innerHTML = `${playerName} <div class="player-modifier"><i class="fa-regular fa-pen-to-square"></i><i class="fa-solid fa-xmark"></i></div>`;
       playerList.appendChild(newPlayerElement);
+      playerNameField.value = "";
     } else {
       alert("please enter player name!");
     }

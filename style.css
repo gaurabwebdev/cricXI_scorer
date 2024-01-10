@@ -98,9 +98,24 @@ main {
 }
 
 .player-list {
-  padding: 15px 35px;
+  padding: 15px 0;
   font-size: 1.15rem;
   color: rgb(255, 255, 255);
+}
+
+.player-list ol li {
+  display: flex;
+  padding: 0.5rem;
+  background: #189349;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-list ol .player-modifier i {
+  margin: 0 0.5rem;
+  cursor: pointer;
 }
 
 /* Match Details CSS */
