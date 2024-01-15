@@ -2,25 +2,42 @@ const teamOne = [];
 const teamTwo = [];
 
 // P l A Y E R      A D D        F U N C T I O N ========
+
+const addPlayers = (field) => {
+  const targetField = field.target;
+  const playerList =
+    targetField.parentElement.parentElement.querySelector(".player-list ol");
+  const teamName =
+    targetField.parentElement.parentElement.querySelector(".team-name");
+  const newPlayerElement = document.createElement("li");
+  const playerNameField =
+    targetField.parentElement.querySelector(".player-name-input");
+  const playerName = playerNameField.value;
+  if (playerName) {
+    newPlayerElement.innerHTML = `${playerName} <div class="player-modifier"><i onclick="modifyPlayer(this)" class="fa-regular fa-pen-to-square"></i><i onclick="modifyPlayer(this)" class="fa-solid fa-xmark"></i></div>`;
+    playerList.appendChild(newPlayerElement);
+    playerNameField.value = "";
+  } else {
+    alert("please enter player name!");
+  }
+};
+
 const playerAddButtons = document.querySelectorAll(".player-add-btn");
 
 playerAddButtons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    const clickedBtn = e.target;
-    const playerList =
-      clickedBtn.parentElement.parentElement.querySelector(".player-list ol");
-    const teamName =
-      clickedBtn.parentElement.parentElement.querySelector(".team-name");
-    const newPlayerElement = document.createElement("li");
-    const playerNameField =
-      clickedBtn.parentElement.querySelector(".player-name-input");
-    const playerName = playerNameField.value;
-    if (playerName) {
-      newPlayerElement.innerHTML = `${playerName} <div class="player-modifier"><i onclick="modifyPlayer(this)" class="fa-regular fa-pen-to-square"></i><i onclick="modifyPlayer(this)" class="fa-solid fa-xmark"></i></div>`;
-      playerList.appendChild(newPlayerElement);
-      playerNameField.value = "";
+    addPlayers(e);
+  });
+});
+
+const playersInputFields = document.querySelectorAll(".player-name-input");
+
+playersInputFields.forEach((i) => {
+  i.addEventListener("keyup", (e) => {
+    if (e.key === "Enter") {
+      addPlayers(e);
     } else {
-      alert("please enter player name!");
+      return;
     }
   });
 });
