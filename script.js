@@ -51,8 +51,16 @@ const modifyPlayer = (modifyBtn) => {
 let matchOver = 5;
 const matchOvers = document.querySelectorAll(".match-overs");
 
-matchOvers.forEach((o) => {
-  o.addEventListener("change", (e) => {
-    console.log(e.target);
+const matchFormatSelector = (selectedOver) => {
+  matchOvers.forEach((over) => {
+    if (over === selectedOver && selectedOver.checked) {
+      selectedOver.classList.add("active");
+    } else if (over === selectedOver && !selectedOver.checked) {
+      selectedOver.classList.remove("active");
+    } else if (over.disabled) {
+      over.disabled = false;
+    } else {
+      over.disabled = true;
+    }
   });
-});
+};
